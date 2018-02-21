@@ -1,4 +1,4 @@
-FROM centos:centos7
+FROM centos@sha256:2671f7a3eea36ce43609e9fe7435ade83094291055f1c96d9d1d1d7c0b986a5d
 
 RUN yum -y update \
     && yum -y install httpd mod_ssl mod_ldap \

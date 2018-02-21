@@ -1,4 +1,4 @@
-FROM unicon/shibboleth-sp
+FROM unicon/shibboleth-sp@sha256:e54cc2f47bd4d7529497bde778fa50b7392c78feb0b16610e0b3ad6b5ad8aafe
 
 RUN yum -y update \
     && yum -y install php mod_ssl   
