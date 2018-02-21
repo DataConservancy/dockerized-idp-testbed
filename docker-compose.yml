@@ -4,6 +4,7 @@ services:
   #This handles all of the http request to simple cert issues and both the SP and IdP can share the same ports.
   httpd-proxy:
     build: ./httpd-proxy/
+    container_name: httpd-proxy
     networks:
      - front
      - back
@@ -13,6 +14,7 @@ services:
 
   idp:
     build: ./idp/
+    container_name: idp
     depends_on: 
      - ldap
     environment:
@@ -32,11 +34,13 @@ services:
    
   ldap:
     build: ./ldap/
+    container_name: ldap
     networks:
      - back
 
   sp:
-    build: ./sp/ 
+    build: ./sp/
+    container_name: sp
     networks:
      - back
     secrets:
@@ -44,6 +48,7 @@ services:
   
   simplesamlphp:
     build: ./simplesamlphp/
+    container_name: simplesamlphp
     links:
       - httpd-proxy:idptestbed
     networks:
@@ -53,10 +58,24 @@ services:
   
   php-cas:
     build: ./php-cas/
+    container_name: php-cas
     links:
       - httpd-proxy:idptestbed
     networks:
      - back
+
+  fedora:
+#    build: ./fcrepo-webac/4.7.5/
+    image: pass/fcrepo:4.7.4-demo
+    container_name: fedora
+    networks:
+      - back
+      - front
+    env_file: .env
+    ports:
+      - "${FCREPO_PORT}:${FCREPO_PORT}"
+      - "${FCREPO_JMS_PORT}:${FCREPO_JMS_PORT}"
+      - "${FCREPO_STOMP_PORT}:${FCREPO_STOMP_PORT}"
 
 networks:
   front:
