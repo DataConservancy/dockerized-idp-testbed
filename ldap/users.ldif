@@ -29,3 +29,63 @@ sn: aff
 cn: St aff
 mail: staff1@idptestbed.edu
 userPassword: password
+
+dn: uid=admin,ou=People,dc=idptestbed
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: inetOrgPerson
+givenName: Moo
+uid: admin
+sn: Admin
+cn: Moo Cow
+mail: admin@idptestbed.edu
+userPassword: moo
+
+dn: uid=fedoraAdmin,ou=People,dc=idptestbed
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: inetOrgPerson
+givenName: Admin Moo
+uid: fedoraAdmin
+sn: fedoraAdmin
+cn: Admin Moo Cow
+mail: fedoraAdmin@idptestbed.edu
+userPassword: moo
+
+dn: uid=agudzun,ou=People,dc=idptestbed
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: inetOrgPerson
+givenName: Anne
+uid: agudzun
+sn: Gudzun
+cn: Anne Gudzun
+mail: agudzun@idptestbed.edu
+userPassword: moo
+
+dn: uid=BenjaminHarman,ou=People,dc=idptestbed
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: inetOrgPerson
+givenName: Ben
+uid: BenjaminHarman
+sn: Harman
+cn: Benjamin Harman
+mail: BenjaminHarman@idptestbed.edu
+userPassword: moo
+
+dn: uid=CynthiaSears,ou=People,dc=idptestbed
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: inetOrgPerson
+givenName: Cynthia
+uid: CynthiaSears
+sn: Sears
+cn: Cynthia Sears
+mail: CynthiaSears@idptestbed.edu
+userPassword: moo
